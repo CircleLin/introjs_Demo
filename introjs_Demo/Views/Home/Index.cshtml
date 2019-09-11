@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section styles{
+    <style>
+
+        .introjs-tooltiptext {
+            font-size: 20px;
+            font-family: 'Microsoft JhengHei';
+            font-weight: 900
+        }
+
+        .introjs-skipbutton, .introjs-prevbutton {
+            display: none !important;
+        }
+
+        .introjs-button {
+            padding: 10px;
+            font-size: 15px;
+            font-family: 'Microsoft JhengHei';
+            color: white;
+            text-shadow: none;
+            background: #2780E3 !important;
+        }
+
+            .introjs-button:hover {
+                background: #1D6CCA !important;
+            }
+
+            .introjs-button:focus,
+            .introjs-button:active {
+                color: white;
+                text-decoration: none;
+                border: none;
+            }
+
+        .introjs-bullets ul li a.active {
+            background: #ADCEF4;
+        }
+    </style>
+
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4" data-step="1" data-intro="Step 1">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4" data-step="2" data-intro="Step 2">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4" data-step="3" data-intro="Step 3">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        $().ready(function () {
+
+            var intro = introJs();
+
+            intro.setOptions({
+                "skipLabel": "略過",
+                "nextLabel": "下一步",
+                "prevLabel": "上一步",
+                "doneLabel": "我知道了",
+                "exitOnEsc": true,          //按Esc結束導覽
+                "keyboardNavigation": true, //啟動鍵盤導覽
+                "showStepNumbers": false
+            });
+
+            intro.start();
+        })
+    </script>
+
+}
